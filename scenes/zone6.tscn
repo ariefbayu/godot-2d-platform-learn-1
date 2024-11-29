@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://dk1t2srq7k6eq"]
+[gd_scene load_steps=24 format=3 uid="uid://dk1t2srq7k6eq"]
 
 [ext_resource type="Script" path="res://scripts/zone_6.gd" id="1_fnimd"]
 [ext_resource type="TileSet" uid="uid://dy5qqq051hd1o" path="res://tilesets/world_tileset.tres" id="2_w3ube"]
 [ext_resource type="PackedScene" uid="uid://bf0ui4igfq0wa" path="res://scenes/player.tscn" id="3_kndq4"]
 [ext_resource type="PackedScene" uid="uid://mgvmuvnr0y5v" path="res://scenes/kill_zone.tscn" id="4_fyms6"]
+[ext_resource type="PackedScene" uid="uid://cec8ie7ufvujw" path="res://scenes/buttons.tscn" id="4_lwicy"]
 [ext_resource type="PackedScene" uid="uid://wwhhre70xxjq" path="res://scenes/platform.tscn" id="5_gbckr"]
 [ext_resource type="PackedScene" uid="uid://d7r7vs2s4w6y" path="res://scenes/teleportation_zone.tscn" id="6_mfue1"]
 [ext_resource type="PackedScene" uid="uid://bbw1kpiyfdj70" path="res://scenes/chest.tscn" id="7_wgfxe"]
@@ -134,6 +135,11 @@ size = Vector2(5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmxu3"]
 size = Vector2(6, 20)
 
+[sub_resource type="Curve" id="Curve_xvq6k"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.308527, 0.201157), 0.0, 0.0, 0, 0, Vector2(0.79845, 0.628773), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [node name="Zone6" type="Node2D"]
 script = ExtResource("1_fnimd")
 
@@ -150,8 +156,7 @@ layer_1/tile_data = PackedInt32Array(2621470, 0, 0, 2621471, 0, 0, 2621472, 0, 0
 position = Vector2(682, 276)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-limit_bottom = 700
+limit_bottom = 1000
 limit_smoothed = true
 
 [node name="Label" type="Label" parent="Player/Camera2D"]
@@ -159,6 +164,9 @@ offset_left = -143.0
 offset_top = -80.0
 offset_right = -103.0
 offset_bottom = -57.0
+
+[node name="Buttons" parent="Player/Camera2D" instance=ExtResource("4_lwicy")]
+position = Vector2(-120, 36)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -242,6 +250,88 @@ foundChar = "S"
 
 [node name="BigChest" parent="." instance=ExtResource("8_iect4")]
 position = Vector2(1328, 229)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="FireworkParticle" type="CPUParticles2D" parent="Node"]
+position = Vector2(1328, 233)
+emitting = false
+amount = 16
+lifetime = 2.0
+explosiveness = 1.0
+direction = Vector2(1, -1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.691303, 0.94283, 0.930823, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_xvq6k")
+
+[node name="FireworkParticle2" type="CPUParticles2D" parent="Node"]
+position = Vector2(1328, 233)
+emitting = false
+amount = 16
+lifetime = 2.0
+explosiveness = 1.0
+direction = Vector2(1, -1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.691303, 0.94283, 0.930823, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_xvq6k")
+
+[node name="FireworkParticle3" type="CPUParticles2D" parent="Node"]
+position = Vector2(1328, 233)
+emitting = false
+amount = 16
+lifetime = 2.0
+explosiveness = 1.0
+direction = Vector2(1, -1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.691303, 0.94283, 0.930823, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_xvq6k")
+
+[node name="FireworkParticle4" type="CPUParticles2D" parent="Node"]
+position = Vector2(1328, 233)
+emitting = false
+amount = 16
+lifetime = 2.0
+explosiveness = 1.0
+direction = Vector2(1, -1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.691303, 0.94283, 0.930823, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_xvq6k")
+
+[node name="FireworkParticle5" type="CPUParticles2D" parent="Node"]
+position = Vector2(1328, 233)
+emitting = false
+amount = 16
+lifetime = 2.0
+explosiveness = 1.0
+direction = Vector2(1, -1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.691303, 0.94283, 0.930823, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_xvq6k")
 
 [connection signal="on_killed" from="KillZones/KillZone" to="." method="_on_kill_zone_on_killed"]
 [connection signal="on_killed" from="KillZones/KillZone2" to="." method="_on_kill_zone_on_killed"]

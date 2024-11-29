@@ -30,6 +30,11 @@ func _on_all_chars_found():
 
 func _on_big_chest_on_chest_opened() -> void:
 	print("Game Over!")
+	$Node/FireworkParticle.emitting = true
+	$Node/FireworkParticle2.emitting = true
+	$Node/FireworkParticle3.emitting = true
+	$Node/FireworkParticle4.emitting = true
+	$Node/FireworkParticle5.emitting = true
 
 
 func _on_kill_zone_on_killed() -> void:

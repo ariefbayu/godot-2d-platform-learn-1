@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://bjqubs5iuuvni"]
+[gd_scene load_steps=18 format=3 uid="uid://bjqubs5iuuvni"]
 
 [ext_resource type="Script" path="res://scripts/zone_2.gd" id="1_46osp"]
 [ext_resource type="TileSet" uid="uid://dy5qqq051hd1o" path="res://tilesets/world_tileset.tres" id="2_ofit4"]
 [ext_resource type="PackedScene" uid="uid://bf0ui4igfq0wa" path="res://scenes/player.tscn" id="3_f6vj5"]
+[ext_resource type="PackedScene" uid="uid://cec8ie7ufvujw" path="res://scenes/buttons.tscn" id="4_wn2lj"]
 [ext_resource type="PackedScene" uid="uid://wwhhre70xxjq" path="res://scenes/platform.tscn" id="5_rkdrh"]
 [ext_resource type="PackedScene" uid="uid://mgvmuvnr0y5v" path="res://scenes/kill_zone.tscn" id="6_kmgkf"]
 [ext_resource type="PackedScene" uid="uid://d7r7vs2s4w6y" path="res://scenes/teleportation_zone.tscn" id="7_0pq7w"]
@@ -108,8 +109,7 @@ layer_1/tile_data = PackedInt32Array(0, 0, 1, 1, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1
 position = Vector2(56, 51)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-limit_bottom = 370
+limit_bottom = 1000
 limit_smoothed = true
 
 [node name="Label" type="Label" parent="Player/Camera2D"]
@@ -117,6 +117,9 @@ offset_left = -143.0
 offset_top = -80.0
 offset_right = -103.0
 offset_bottom = -57.0
+
+[node name="Buttons" parent="Player/Camera2D" instance=ExtResource("4_wn2lj")]
+position = Vector2(-120, 36)
 
 [node name="KillZone" parent="." instance=ExtResource("6_kmgkf")]
 position = Vector2(46, 762)

@@ -19,6 +19,7 @@ var deathCount = 0
 
 func _ready() -> void:
 	change_scene("zone1", "position0", 1)
+	#change_scene("zone6", "position1", 1)
 	startTime = Time.get_unix_time_from_system()
 	#pass
 
