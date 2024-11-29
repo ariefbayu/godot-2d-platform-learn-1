@@ -17,7 +17,9 @@ func _process(delta: float) -> void:
 			on_chest_opened.emit()
 
 func _on_body_entered(body: Node2D) -> void:
-	entered = true
+	if body.name == "Player":
+		entered = true
 
 func _on_body_exited(body: Node2D) -> void:
-	entered = false
+	if body.name == "Player":
+		entered = false
