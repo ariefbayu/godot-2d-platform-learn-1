@@ -1,6 +1,9 @@
 extends ZoneMaster
 
 func _ready() -> void:
+	
+	if !shouldShowSoftButtons():
+		$Player/Camera2D/Buttons.visible = false
 	if start_point_configured == false:
 		start_point_configured = true
 		spawn()
