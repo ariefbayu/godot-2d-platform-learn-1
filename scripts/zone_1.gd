@@ -1,7 +1,7 @@
 extends ZoneMaster
 
 func _ready() -> void:
-	
+	GameManager.start_run()
 	if !shouldShowSoftButtons():
 		$Player/Camera2D/Buttons.visible = false
 	if start_point_configured == false:
@@ -16,6 +16,7 @@ func _game_manager_on_char_found():
 
 func spawn():
 	print("Position: " + starting_point + " | Facing: " + str(facing))
+	$Player/Camera2D/LabelKilled.text = "Killed: " + str(GameManager.deathCount)
 	if starting_point == "position1":
 		$Player.position = $"StartingPoints/Position1".position
 	elif starting_point == "position2":

@@ -14,6 +14,7 @@ func _game_manager_on_char_found():
 
 
 func spawn():
+	$Player/Camera2D/LabelKilled.text = "Killed: " + str(GameManager.deathCount)
 	if starting_point == "position1":
 		$Player.position = $"StartingPoints/Position1".position
 	elif starting_point == "position2":

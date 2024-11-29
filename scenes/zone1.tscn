@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bxmyeympf833q"]
+[gd_scene load_steps=22 format=3 uid="uid://bxmyeympf833q"]
 
 [ext_resource type="Script" path="res://scripts/zone_1.gd" id="1_fcqpq"]
 [ext_resource type="Texture2D" uid="uid://dpadb88q8j6qo" path="res://assets/sprites/world_tileset.png" id="2_iewsi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_label/src/DialogueLabel.gd" id="4_m7evj"]
 [ext_resource type="PackedScene" uid="uid://cec8ie7ufvujw" path="res://scenes/buttons.tscn" id="5_2xwqb"]
 [ext_resource type="PackedScene" uid="uid://wwhhre70xxjq" path="res://scenes/platform.tscn" id="5_dpcj0"]
+[ext_resource type="PackedScene" uid="uid://dms8jis5qvaqe" path="res://scenes/game_run.tscn" id="6_0mt1s"]
 [ext_resource type="PackedScene" uid="uid://mgvmuvnr0y5v" path="res://scenes/kill_zone.tscn" id="6_xhhe5"]
 [ext_resource type="PackedScene" uid="uid://d7r7vs2s4w6y" path="res://scenes/teleportation_zone.tscn" id="7_4nffq"]
 
@@ -299,6 +300,16 @@ messages = Array[String](["Hey there! Please help me collect all the characters 
 
 [node name="Buttons" parent="Player/Camera2D" instance=ExtResource("5_2xwqb")]
 position = Vector2(-120, 36)
+
+[node name="GameRun" parent="Player/Camera2D" instance=ExtResource("6_0mt1s")]
+position = Vector2(-144, -60)
+
+[node name="LabelKilled" type="Label" parent="Player/Camera2D"]
+offset_left = -144.0
+offset_top = -36.0
+offset_right = -92.0
+offset_bottom = -13.0
+text = "Killed: "
 
 [node name="Coins" type="Node" parent="."]
 

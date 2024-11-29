@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://bfg67etn42lcq"]
+[gd_scene load_steps=22 format=3 uid="uid://bfg67etn42lcq"]
 
 [ext_resource type="Script" path="res://scripts/zone_5.gd" id="1_gylqw"]
 [ext_resource type="TileSet" uid="uid://dy5qqq051hd1o" path="res://tilesets/world_tileset.tres" id="2_4rct4"]
 [ext_resource type="PackedScene" uid="uid://bf0ui4igfq0wa" path="res://scenes/player.tscn" id="3_3xvml"]
 [ext_resource type="PackedScene" uid="uid://cec8ie7ufvujw" path="res://scenes/buttons.tscn" id="4_epc66"]
 [ext_resource type="PackedScene" uid="uid://mgvmuvnr0y5v" path="res://scenes/kill_zone.tscn" id="4_o2ek5"]
+[ext_resource type="PackedScene" uid="uid://dms8jis5qvaqe" path="res://scenes/game_run.tscn" id="5_qiura"]
 [ext_resource type="PackedScene" uid="uid://wwhhre70xxjq" path="res://scenes/platform.tscn" id="5_sbs05"]
 [ext_resource type="PackedScene" uid="uid://d7r7vs2s4w6y" path="res://scenes/teleportation_zone.tscn" id="6_bovwo"]
 [ext_resource type="PackedScene" uid="uid://bbw1kpiyfdj70" path="res://scenes/chest.tscn" id="7_72w3l"]
@@ -156,9 +157,20 @@ offset_left = -143.0
 offset_top = -80.0
 offset_right = -103.0
 offset_bottom = -57.0
+text = "*****"
 
 [node name="Buttons" parent="Player/Camera2D" instance=ExtResource("4_epc66")]
 position = Vector2(-120, 36)
+
+[node name="GameRun" parent="Player/Camera2D" instance=ExtResource("5_qiura")]
+position = Vector2(-144, -60)
+
+[node name="LabelKilled" type="Label" parent="Player/Camera2D"]
+offset_left = -144.0
+offset_top = -36.0
+offset_right = -92.0
+offset_bottom = -13.0
+text = "Killed: "
 
 [node name="KillZone" parent="." instance=ExtResource("4_o2ek5")]
 position = Vector2(46, 762)
