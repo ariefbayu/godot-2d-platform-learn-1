@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d7r7vs2s4w6y"]
+
+[ext_resource type="Script" path="res://scripts/teleportation_zone.gd" id="1_mtong"]
+
+[node name="TeleportationZone" type="Area2D"]
+script = ExtResource("1_mtong")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

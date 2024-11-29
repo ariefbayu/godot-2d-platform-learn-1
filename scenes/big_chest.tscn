@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5g680rov1ksi"]
+
+[ext_resource type="Script" path="res://scripts/big_chest.gd" id="1_10rcx"]
+[ext_resource type="Texture2D" uid="uid://dpfppyfyq14s7" path="res://assets/sprites/dungeonDecoration_0.png" id="1_kd4ye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eydp8"]
+size = Vector2(26, 18)
+
+[node name="BigChest" type="Area2D"]
+script = ExtResource("1_10rcx")
+
+[node name="SpriteUnlocked" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -4)
+texture = ExtResource("1_kd4ye")
+region_enabled = true
+region_rect = Rect2(83, 38, 26, 24)
+
+[node name="SpriteLocked" type="Sprite2D" parent="."]
+texture = ExtResource("1_kd4ye")
+region_enabled = true
+region_rect = Rect2(51, 45, 26, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eydp8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
