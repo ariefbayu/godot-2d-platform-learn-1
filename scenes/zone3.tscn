@@ -149,23 +149,23 @@ limit_bottom = 1000
 limit_smoothed = true
 
 [node name="Label" type="Label" parent="Player/Camera2D"]
-offset_left = -143.0
-offset_top = -80.0
-offset_right = -103.0
-offset_bottom = -57.0
+offset_left = -280.0
+offset_top = -160.0
+offset_right = -236.0
+offset_bottom = -137.0
 text = "*****"
 
 [node name="Buttons" parent="Player/Camera2D" instance=ExtResource("4_dul4y")]
-position = Vector2(-120, 36)
+position = Vector2(-256, 124)
 
 [node name="GameRun" parent="Player/Camera2D" instance=ExtResource("5_ap3hb")]
-position = Vector2(-144, -60)
+position = Vector2(-280, -140)
 
 [node name="LabelKilled" type="Label" parent="Player/Camera2D"]
-offset_left = -144.0
-offset_top = -36.0
-offset_right = -92.0
-offset_bottom = -13.0
+offset_left = -280.0
+offset_top = -120.0
+offset_right = -228.0
+offset_bottom = -97.0
 text = "Killed: "
 
 [node name="KillZone" parent="." instance=ExtResource("4_o2ek5")]

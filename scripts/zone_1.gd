@@ -1,7 +1,14 @@
 extends ZoneMaster
 
 func _ready() -> void:
-	GameManager.start_run()
+	if !GameManager.is_game_started:
+		$Player/Camera2D/Label.visible = false
+		$Player/Camera2D/LabelKilled.visible = false
+		$Player/Camera2D/GameRun.visible = false
+		$Player.freeze()
+
+		Dialogic.start("help-start")
+		Dialogic.signal_event.connect(_dialogic_events)
 	if !shouldShowSoftButtons():
 		$Player/Camera2D/Buttons.visible = false
 	if start_point_configured == false:
@@ -9,7 +16,15 @@ func _ready() -> void:
 		spawn()
 	GameManager.on_char_found.connect(_game_manager_on_char_found)
 	_game_manager_on_char_found()
-	$Player/Camera2D/DialogueLabel.start_dialogue()
+
+func _dialogic_events(arg: String):
+	if arg == "helpstart_finished":
+		GameManager.start_run()
+		$Player/Camera2D/Label.visible = true
+		$Player/Camera2D/LabelKilled.visible = true
+		$Player/Camera2D/GameRun.visible = true
+		$Player.unfreeze()
+
 
 func _game_manager_on_char_found():
 	$Player/Camera2D/Label.text = GameManager.getMessage()

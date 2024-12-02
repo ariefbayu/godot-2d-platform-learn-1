@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bxmyeympf833q"]
+[gd_scene load_steps=21 format=3 uid="uid://bxmyeympf833q"]
 
 [ext_resource type="Script" path="res://scripts/zone_1.gd" id="1_fcqpq"]
 [ext_resource type="Texture2D" uid="uid://dpadb88q8j6qo" path="res://assets/sprites/world_tileset.png" id="2_iewsi"]
 [ext_resource type="PackedScene" uid="uid://bf0ui4igfq0wa" path="res://scenes/player.tscn" id="3_yo1ve"]
-[ext_resource type="Script" path="res://addons/dialogue_label/src/DialogueLabel.gd" id="4_m7evj"]
 [ext_resource type="PackedScene" uid="uid://cec8ie7ufvujw" path="res://scenes/buttons.tscn" id="5_2xwqb"]
 [ext_resource type="PackedScene" uid="uid://wwhhre70xxjq" path="res://scenes/platform.tscn" id="5_dpcj0"]
 [ext_resource type="PackedScene" uid="uid://dms8jis5qvaqe" path="res://scenes/game_run.tscn" id="6_0mt1s"]
@@ -282,33 +281,23 @@ limit_bottom = 1000
 limit_smoothed = true
 
 [node name="Label" type="Label" parent="Player/Camera2D"]
-offset_left = -143.0
-offset_top = -80.0
-offset_right = -97.0
-offset_bottom = -57.0
+offset_left = -280.0
+offset_top = -160.0
+offset_right = -234.0
+offset_bottom = -137.0
 text = "*****"
 
-[node name="DialogueLabel" type="RichTextLabel" parent="Player/Camera2D"]
-visible = false
-offset_left = 12.0
-offset_top = -52.0
-offset_right = 127.0
-offset_bottom = -12.0
-fit_content = true
-script = ExtResource("4_m7evj")
-messages = Array[String](["Hey there! Please help me collect all the characters to unlock chest at the end of the dungeon."])
-
 [node name="Buttons" parent="Player/Camera2D" instance=ExtResource("5_2xwqb")]
-position = Vector2(-120, 36)
+position = Vector2(-256, 124)
 
 [node name="GameRun" parent="Player/Camera2D" instance=ExtResource("6_0mt1s")]
-position = Vector2(-144, -60)
+position = Vector2(-280, -140)
 
 [node name="LabelKilled" type="Label" parent="Player/Camera2D"]
-offset_left = -144.0
-offset_top = -36.0
-offset_right = -92.0
-offset_bottom = -13.0
+offset_left = -280.0
+offset_top = -120.0
+offset_right = -228.0
+offset_bottom = -97.0
 text = "Killed: "
 
 [node name="Coins" type="Node" parent="."]

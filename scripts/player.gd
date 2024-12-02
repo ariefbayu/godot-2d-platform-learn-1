@@ -3,11 +3,18 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+var is_freeze:bool = false
 
 @onready var my_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func flip(flipValue: bool = true):
 	my_sprite.flip_h = flipValue
+
+func freeze():
+	is_freeze = true
+
+func unfreeze():
+	is_freeze = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -15,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and !is_freeze:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

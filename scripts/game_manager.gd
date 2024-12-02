@@ -34,11 +34,11 @@ func get_current_run():
 	return str
 	
 func reload_scene():
-	get_tree().get_root().get_child(1)
+	get_tree().get_root().get_child(2)
 	
 func change_scene(target: String, start: String, facing: int) -> void:
 	print("Change scene to " + target + " at " + start)
-	get_tree().get_root().get_child(2).visible = true
+	get_tree().get_root().get_child(3).visible = true
 	$AnimationPlayer.play("fade_in")
 	await $AnimationPlayer.animation_finished
 	var scene = load("res://scenes/" + target + ".tscn")
@@ -48,14 +48,14 @@ func change_scene(target: String, start: String, facing: int) -> void:
 	#get_tree().change_scene_to_packed(loaded_scene)
 	if isFirstLoad:
 		isFirstLoad = false
-		get_tree().get_root().get_child(2).free()
+		get_tree().get_root().get_child(3).free()
 	else:
-		get_tree().get_root().get_child(1).free()
+		get_tree().get_root().get_child(2).free()
 	get_tree().get_root().add_child(loaded_scene)
-	get_tree().get_root().move_child(loaded_scene, 1)
+	get_tree().get_root().move_child(loaded_scene, 2)
 	$AnimationPlayer.play_backwards("fade_in")
 	await $AnimationPlayer.animation_finished
-	get_tree().get_root().get_child(2).visible = false
+	get_tree().get_root().get_child(3).visible = false
 
 func foundChar(char: String):
 	if char == "F":

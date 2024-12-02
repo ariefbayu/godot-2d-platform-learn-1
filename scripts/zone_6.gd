@@ -38,6 +38,7 @@ func _on_big_chest_on_chest_opened() -> void:
 	$Node/FireworkParticle3.emitting = true
 	$Node/FireworkParticle4.emitting = true
 	$Node/FireworkParticle5.emitting = true
+	Dialogic.start("game-finish")
 
 
 func _on_kill_zone_on_killed() -> void:

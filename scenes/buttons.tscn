@@ -9,29 +9,33 @@ position = Vector2(0, 8)
 script = ExtResource("1_tplv5")
 
 [node name="ButtonLeft" type="TouchScreenButton" parent="."]
-position = Vector2(-8, -8)
-scale = Vector2(1.5, 1.5)
+modulate = Color(1, 1, 1, 0.509804)
+position = Vector2(-8, -48)
+scale = Vector2(4, 4)
 texture_normal = ExtResource("2_bb0hq")
 texture_pressed = ExtResource("3_0febg")
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonRight" type="TouchScreenButton" parent="."]
-position = Vector2(40, -8)
-scale = Vector2(1.5, 1.5)
+modulate = Color(1, 1, 1, 0.509804)
+position = Vector2(88, -48)
+scale = Vector2(4, 4)
 texture_normal = ExtResource("2_bb0hq")
 texture_pressed = ExtResource("3_0febg")
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonJump" type="TouchScreenButton" parent="."]
-position = Vector2(224, -8)
-scale = Vector2(1.5, 1.5)
+modulate = Color(1, 1, 1, 0.509804)
+position = Vector2(456, -48)
+scale = Vector2(4, 4)
 texture_normal = ExtResource("2_bb0hq")
 texture_pressed = ExtResource("3_0febg")
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonAction" type="TouchScreenButton" parent="."]
-position = Vector2(224, -48)
-scale = Vector2(1.5, 1.5)
+modulate = Color(1, 1, 1, 0.509804)
+position = Vector2(456, -136)
+scale = Vector2(4, 4)
 texture_normal = ExtResource("2_bb0hq")
 texture_pressed = ExtResource("3_0febg")
 metadata/_edit_use_anchors_ = true
